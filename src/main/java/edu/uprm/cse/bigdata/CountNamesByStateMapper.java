@@ -17,7 +17,7 @@ public class CountNamesByStateMapper extends Mapper<LongWritable, Text, Text, In
         String state = cols[0];
         String name = cols[3];
         String newKey = state + "-" + name;
-        context.write(new Text(state), new IntWritable(1));
+        context.write(new Text(newKey), new IntWritable(1));
 
     }
 }
